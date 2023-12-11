@@ -80,10 +80,6 @@ export const fetchUpcomingMovies = () => {
     })
 }
 
-type movieById = {
-    movieId:string
-}
-
 export type ProductionCompaniesType = {
     id:number,
     logo_path:string,
@@ -130,7 +126,7 @@ export type MovieType = {
     vote_count:number
 }
 
-export const fetchMovieById = ({movieId}: movieById) => {
+export const fetchMovieById = ({movieId}: any) => {
     return new Promise(async (resolved, rejected) => {
         try {
             fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`).then((res) => res.json()).then((data: MovieType) => {

@@ -11,7 +11,7 @@ import Popular from '@/components/Popular'
 import Upcoming from '@/components/Upcoming'
 import ExploreHeader from '@/components/ExploreHeader'
 
-const page = () => {
+const Page = () => {
 
     const [heroMovie, setHeroMovie] = useState<heroMovieType | null>(null);
     const [trending, setTrending] = useState<Array<heroMovieType> | []>([]);
@@ -55,9 +55,9 @@ const page = () => {
                                     </div>
                                     <span>{heroMovie?.vote_average} / 10</span>
                                 </div>
-                                <Divider />
+                                <span className='font-medium' >|</span>
                                 <span>{heroMovie?.release_date}</span>
-                                <Divider />
+                                <span className='font-medium' >|</span>
                                 <span>{heroMovie?.original_language}</span>
                             </div>
                             <h1 className='text-4xl max-[960px]:text-3xl max-[600px]:text-lg font-bold tracking-wider' >{heroMovie?.original_title}</h1>
@@ -85,8 +85,4 @@ const page = () => {
     )
 }
 
-export function Divider() {
-    return <span className='font-medium' >|</span>
-}
-
-export default page
+export default Page

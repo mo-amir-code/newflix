@@ -4,7 +4,6 @@ import { useParams } from 'next/navigation'
 import { fetchMovieById, fetchPopularMovies, fetchTrendingMovies, fetchUpcomingMovies, heroMovieType, MovieType } from '@/lib/services/service'
 import { imageBaseUrl } from '@/lib/constants'
 import Image from 'next/image'
-import { Divider } from '@/app/explore/page'
 import ProductionCompanies from '@/components/ProductionCompanies'
 import imdb from "@/assets/icons/imdb.png"
 import Upcoming from '@/components/Upcoming'
@@ -23,7 +22,7 @@ const MoviePage = () => {
     useEffect(() => {
         try {
             const fetchMovieByIdInit = async () => {
-                const data: MovieType = await fetchMovieById({ movieId });
+                const data: any = await fetchMovieById({ movieId:movieId });
                 console.log(data);
                 setProgramInfo(data)
             }
@@ -67,7 +66,7 @@ const MoviePage = () => {
                                 {programInfo?.genres.map((genre: { id: number, name: string }) => (
                                     <>
                                         <span key={genre.id} >{genre.name}</span>
-                                        <Divider />
+                                        <span className='font-medium' >|</span>
                                     </>
                                 ))}
                                 <div className='flex items-center gap-2' >
@@ -87,7 +86,7 @@ const MoviePage = () => {
                                 }) => (
                                     <>
                                         <span key={language.name} >{language.name}</span>
-                                        <Divider />
+                                        <span className='font-medium' >|</span>
                                     </>
                                 ))}
                                 <span>Release Date: {programInfo?.release_date}</span>

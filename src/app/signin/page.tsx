@@ -14,7 +14,7 @@ type Inputs = {
   password: string
 }
 
-const login = () => {
+const Login = () => {
   const { user }: any = useContext(AuthContext)
   const router = useRouter()
 
@@ -75,4 +75,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
