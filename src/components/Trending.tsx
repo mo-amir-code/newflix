@@ -35,10 +35,10 @@ const Trending = ({ trending }: trendingType) => {
                     ))}
                 </div>
                 <div onClick={handlePrev} className='absolute top-[40%] cursor-pointer -translate-y-[50%] left-6 p-2 rounded-full bg-white' >
-                    <Image src={leftArrow} alt='left arrow' className='w-6 max-[600px]:w-4' />
+                    <Image src={leftArrow} alt='left arrow' className='w-6 ' />
                 </div>
                 <div onClick={handleNext} className='absolute top-[40%] cursor-pointer -translate-y-[50%] right-6 p-2 rounded-full bg-white' >
-                    <Image src={rightArrow} alt='right arrow' className='w-6 max-[600px]:w-4' />
+                    <Image src={rightArrow} alt='right arrow' className='w-6 ' />
                 </div>
             </div>
         </div>
