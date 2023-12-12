@@ -6,13 +6,14 @@ import { heroMovieType } from '@/lib/services/service'
 import Link from 'next/link'
 
 type movieType = {
-    movie: heroMovieType
+    movie: heroMovieType,
+    cardRef:any
 }
 
-const MovieCard = ({ movie }: movieType) => {
+const MovieCard = ({ movie, cardRef }: movieType) => {
 
     return (
-        <div className='w-52 hover:-translate-y-2 py-4 transition-all cursor-pointer' >
+        <div ref={cardRef} className='w-52 hover:-translate-y-2 py-4 transition-all cursor-pointer' >
             <Link href={`/movie/${movie.id}`}>
                 <div className='w-full flex items-center justify-center gap-2 flex-col p-3' >
                     <div className='w-44 overflow-hidden' >
