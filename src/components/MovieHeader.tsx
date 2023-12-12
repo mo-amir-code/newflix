@@ -1,8 +1,6 @@
 'use client'
 import React, { useContext } from 'react'
 import Button from '@/components/buttons/Button'
-import homeIcon from "@/assets/icons/home_icon.svg"
-import Image from 'next/image'
 import { AuthContext } from '@/app/context/authContext'
 
 const MovieHeader = () => {
@@ -15,9 +13,9 @@ const MovieHeader = () => {
                 <div className='flex items-center max-[500px]:hidden justify-center gap-4 text-sm font-semibold' >
                     {!!user && !user?.isLoggedIn ? <Button type={"Sign In"} path={"/signin"} /> : <Button type={"Log out"} path={"/signout"} />}
                 </div>
-                <div className='w-8 h-8 max-[500px]:block hidden rounded-full overflow-hidden' >
+                {/* <div className='w-8 h-8 max-[500px]:block hidden rounded-full overflow-hidden' >
                     <Image src={homeIcon} alt='home' className='object-cover w-full h-full' />
-                </div>
+                </div> */}
             </nav>
         </div>
     )
