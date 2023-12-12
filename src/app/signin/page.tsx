@@ -31,7 +31,11 @@ const Login = () => {
       alert("User registered successfully")
       reset()
       router.push("/explore")
+<<<<<<< HEAD
     }).catch((err) => {
+=======
+    }).catch((err) => {
+>>>>>>> changes
       console.log(err.message);
       alert("Something went wrong")
     })
